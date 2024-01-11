@@ -7,7 +7,7 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
-decouple = "*"
+python-decouple = "*"
 
 [dev-packages]
 
