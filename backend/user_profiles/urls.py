@@ -6,7 +6,7 @@ from .serializers import UserProfileSerializer
 from .views import UserProfileRegistrationAPIView, UserProfileLoginAPIView, UserProfileTokenAPIView, UserProfileRetriveAPIView
 
 urlpatterns = [
-    path("profiles/", UserProfileRegistrationAPIView.as_view()),
+    path("register/", UserProfileRegistrationAPIView.as_view()),
     path("login/", UserProfileLoginAPIView.as_view()),
     path("tokens/<key>/", UserProfileTokenAPIView.as_view()),
     path("profiles/<int:pk>/", UserProfileRetriveAPIView.as_view()),
