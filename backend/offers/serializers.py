@@ -10,6 +10,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class SubcategorySerializer(serializers.ModelSerializer):
+    category = CategorySerializer()
+
     class Meta:
         model = Subcategory
         fields = '__all__'
@@ -17,7 +19,6 @@ class SubcategorySerializer(serializers.ModelSerializer):
 
 class OfferSerializer(serializers.ModelSerializer):
     owner = UserProfileSerializer()
-    category = CategorySerializer()
     subcategory = SubcategorySerializer()
 
     class Meta:

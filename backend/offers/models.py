@@ -22,7 +22,6 @@ class Subcategory(models.Model):
 class Offer(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE)
     price = models.FloatField()
     description = models.TextField()
