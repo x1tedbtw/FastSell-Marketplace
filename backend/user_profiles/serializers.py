@@ -4,6 +4,7 @@ from .models import UserProfile
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate
 
+
 class UserProfileRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
@@ -14,6 +15,7 @@ class UserProfileRegistrationSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         attrs["password"] = make_password(attrs["password"])
         return attrs
+
 
 class UserProfileLoginSerializer(serializers.Serializer):
     username = serializers.CharField(required=True)
@@ -31,6 +33,7 @@ class UserProfileLoginSerializer(serializers.Serializer):
             return attrs
         else:
             raise serializers.ValidationError("Invalid credentials")
+
 
 class UserProfileTokenSerializer(serializers.ModelSerializer):
     auth_token = serializers.CharField(source="key")

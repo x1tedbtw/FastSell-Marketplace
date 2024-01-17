@@ -3,28 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your E-commerce Website</title>
+    <script src="https://kit.fontawesome.com/9b8a7e18a0.js"></script>
+    <title>Fastsell</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">My Logo</div>
-        <div id="search-container">
-            <input type="text" id="search-input" placeholder="Search...">
-            <button id="search-button" onclick="performSearch()">Search</button>
+        <div class="inner">
+            <div class="logo">
+                <div>
+                    <img src="img/raw_logo.png" alt="My logo">
+                </div>
+            </div>
+
+            <nav>
+                <!-- Each of the below lines look complicated. There is a reason for this markup though!
+                <li> tag will be the container for the table.
+                <span> will be the part that centers the content inside it
+                <a> is the actual clickable part -->
+                <li><span><a href="" class="button">Home</a></span></li>
+                <li><span><a href="" class="button">Contact</a></span></li>
+                <li><span><a href="" class="button">My account</a></span></li>
+                <!-- On the line above, remove the class="button" if you don't want the final
+                element to be a button -->
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Deals</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <!-- Product Listings, Categories, Featured Products, etc. -->
+        <div class="search_box">
+            <div class="search">
+                <div class= "select_area">
+                    <i class="fas fa-map-marker-alt map_icon"></i>
+                    <div class="text">Anywhere</div>
+                </div>
+                <div class="line"></div>
+                <div class = "text_and-icon">
+                <input type="text" class="search_text" id="search_text" placeholder="Search by Company, Keyword or the designation ..">
+                <i class="fas fa-search search_icon"></i>
+                </div>
+            </div>
+        <div class="content-container">
+            <h2 style="text-align: center;">Main Categories</h2>
+        <!-- Main Content Section -->
+            <div class="main-categories-container">
+            <!-- Category Buttons -->
+                <button class="category-button">
+                    <img src="img/antyki-i-kolekcje-4042-1x.png" alt="Category 1">
+                Category 1
+                </button>
+                <div class="category">
+                    <li><a href="#">Category 2</a></li>
+                </div>
+                <div class="category">
+                    <li><a href="#">Category 3</a></li>
+                </div>
+            <div class="category">
+                <li><a href="#">Category 4</a></li>
+            </div>
+            <div class="category">
+                <li><a href="#">Category 5</a></li>
+            </div>
+            <div class="category">
+                <li><a href="#">Category 6</a></li>
+            </div>
+            <div class="category">
+                <li><a href="#">Category 7</a></li>
+            </div>
+            <div class="category">
+                <li><a href="#">Category 8</a></li>
+            </div>
+            <div class="category">
+                <li><a href="#">Category 9</a></li>
+            </div>
+            <div class="category">
+                <li><a href="#">Category 10</a></li>
+            </div>
+        </div>
+        </div>
+            </div>
     </main>
 
     <script src="script.js"></script>
