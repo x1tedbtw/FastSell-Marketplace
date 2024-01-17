@@ -58,7 +58,7 @@ class UserProfileTokenAPIView(generics.RetrieveDestroyAPIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         return super(UserProfileTokenAPIView, self).destroy(request, key, *args, **kwargs)
 
-class UserProfileList(generics.ListCreateAPIView):
+class UserProfileList(generics.ListAPIView):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
 
