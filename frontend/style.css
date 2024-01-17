@@ -11,7 +11,7 @@ body {
 
 /* End of Search bar */
 header {
-    background-color: #008080;
+    background-color: #ffffff;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -87,4 +87,28 @@ main {
     margin: 0;
     font-size: 16px;
 }
+
+button.category-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #008080; /* Your button background color */
+            color: #fff; /* Your button text color */
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px; /* Add margin between buttons */
+            transition: background-color 0.3s;
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        button.category-button img {
+            width: 20px; /* Adjust the image width */
+            margin-right: 5px; /* Add some space between the image and text */
+        }
+
+        button.category-button:hover {
+            background-color: #006666; /* Change the color on hover */
+        }
 
