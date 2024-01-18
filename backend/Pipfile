@@ -10,6 +10,7 @@ django-cors-headers = "*"
 psycopg = "*"
 gunicorn = "*"
 python-dotenv = "*"
+pillow = "*"
 
 [dev-packages]
 
