@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Offer, Category, Subcategory
+from .models import Offer, Category, Subcategory, OfferImages
 from user_profiles.serializers import UserProfileSerializer
 
 
@@ -16,6 +16,12 @@ class CategorySerializer(serializers.ModelSerializer):
         return serializer.data
 
 
+class ImageOfferSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OfferImages
+        fields = '__all__'
+
+
 class SubcategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Subcategory
@@ -25,6 +31,7 @@ class SubcategorySerializer(serializers.ModelSerializer):
 class OfferViewSerializer(serializers.ModelSerializer):
     owner = UserProfileSerializer(read_only=True)
     subcategory = SubcategorySerializer()
+    images = ImageOfferSerializer()
 
     class Meta:
         model = Offer
@@ -34,4 +41,8 @@ class OfferViewSerializer(serializers.ModelSerializer):
 class OfferSerializer(serializers.ModelSerializer):
     class Meta:
         model = Offer
-        fields = ["title", "subcategory", "price", "description"]
+        fields = ["title", "owner", "subcategory", "price", "description"]
+
+
+
+
