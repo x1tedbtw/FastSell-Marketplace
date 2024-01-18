@@ -28,4 +28,10 @@ class Offer(models.Model):
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
 
+class OfferImages(models.Model):
+    image_url = models.ImageField(upload_to=upload_to, related_name='offer_images', blank=True, null=True)
+    offer = models.ForeignKey(Offer, on_delete=models.CASCADE)
+
+
+
 

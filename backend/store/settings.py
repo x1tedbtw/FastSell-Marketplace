@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 from dotenv import dotenv_values
 
 config = dotenv_values(".env")
@@ -150,3 +151,10 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 AUTH_USER_MODEL = 'user_profiles.UserProfile'
+
+
+# Actual directory user files go to
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'offer_images')
+
+# URL used to access the media
+MEDIA_URL = '/offer_images_url/'
