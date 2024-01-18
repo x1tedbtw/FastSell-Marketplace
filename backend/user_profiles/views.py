@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from rest_framework import generics, status
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from .models import UserProfile
 from .serializers import UserProfileSerializer, UserProfileRegistrationSerializer, UserProfileLoginSerializer, UserProfileTokenSerializer
+
 
 class UserProfileRegistrationAPIView(generics.CreateAPIView):
     serializer_class = UserProfileRegistrationSerializer
@@ -23,6 +25,7 @@ class UserProfileRegistrationAPIView(generics.CreateAPIView):
         headers = self.get_success_headers(serializer.data)
         return Response(data, status=status.HTTP_201_CREATED)
 
+
 class UserProfileLoginAPIView(generics.GenericAPIView):
     serializer_class = UserProfileLoginSerializer
     authentication_classes = []
@@ -36,6 +39,7 @@ class UserProfileLoginAPIView(generics.GenericAPIView):
             return Response(data=UserProfileTokenSerializer(token).data, status=status.HTTP_200_OK)
         else:
             return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class UserProfileTokenAPIView(generics.RetrieveDestroyAPIView):
     lookup_field = "key"
@@ -58,11 +62,17 @@ class UserProfileTokenAPIView(generics.RetrieveDestroyAPIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         return super(UserProfileTokenAPIView, self).destroy(request, key, *args, **kwargs)
 
-class UserProfileList(generics.ListCreateAPIView):
-    queryset = UserProfile.objects.all()
-    serializer_class = UserProfileSerializer
 
-class UserProfileRetriveAPIView(generics.RetrieveAPIView):
+class UserProfileDetailAPIView(generics.RetrieveAPIView):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
     permission_classes = []
+
+
+class MyUserProfileAPIView(generics.RetrieveAPIView):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
