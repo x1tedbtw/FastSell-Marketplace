@@ -13,7 +13,7 @@ header{
 }
 
 header .inner{
-    width: 1300px; /* This is the inner width of the content inside of your header (80%, etc) */
+    width: 1300px;
     height: 100%;
     display: block;
     margin: 0 auto;
@@ -33,7 +33,8 @@ header .logo div{
 
 header .logo img{
     height: 50px;
-    margin-top: 5px; /* Optical alignment of the logo */
+    margin-top: 5px;
+    width: 100%;
 }
 
 header nav{
@@ -62,7 +63,7 @@ header nav a{
 }
 
 header nav .button{
-    background-color: #1ab26b; /* This HEX is the color of the button */
+    background-color: #1ab26b;
     color: #FFF;
     padding: 10px 20px;
     border-radius: 4px;
@@ -180,14 +181,12 @@ main {
     padding: 20px;
 }
 
-
-
 .main-categories-container {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px; /* Add some space at the top */
+    margin-top: 20px;
 }
 
 .category {
@@ -209,32 +208,29 @@ button.category-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #008080; /* Your button background color */
-    color: #fff; /* Your button text color */
-    border: 1px solid #006666; /* Add border for better visibility */
+    background-color: #008080;
+    color: #fff;
+    border: 1px solid #006666;
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    margin: 5px; /* Add margin between buttons */
+    margin: 5px;
     transition: background-color 0.3s;
-    text-decoration: none; /* Remove underlines from links */
-
+    text-decoration: none;
 }
 
 button.category-button img {
-    width: 20px; /* Adjust the image width */
-    margin-right: 5px; /* Add some space between the image and text */
+    width: 20px;
+    margin-right: 5px;
 }
 
 button.category-button:hover {
-    background-color: #006666; /* Change the color on hover */
+    background-color: #006666;
 }
 
 .content-container {
-    max-width: 1200px; /* Set the maximum width of the content container */
-    margin: 0 auto; /* Center the content container horizontally */
-    background-color: #f0f0f0; /* Set the background color of the content container */
-    padding: 20px; /* Add padding inside the content container */
-     /* Add a subtle box shadow */
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 20px;
 }
-
