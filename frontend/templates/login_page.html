@@ -7,8 +7,26 @@
 </head>
 <body>
 <header>
+        <div class="inner">
+            <div class="logo">
+                <div>
+                    <img src="img/raw_logo.png" alt="My logo">
+                </div>
+            </div>
 
-</header>
+            <nav>
+                <!-- Each of the below lines look complicated. There is a reason for this markup though!
+                <li> tag will be the container for the table.
+                <span> will be the part that centers the content inside it
+                <a> is the actual clickable part -->
+                <li><span><a href="" class="button">Home</a></span></li>
+                <li><span><a href="" class="button">Contact</a></span></li>
+                <li><span><a href="" class="button">My account</a></span></li>
+                <!-- On the line above, remove the class="button" if you don't want the final
+                element to be a button -->
+            </nav>
+        </div>
+    </header>
 <div class="center">
     <h1>Login</h1>
     <form method="post">
