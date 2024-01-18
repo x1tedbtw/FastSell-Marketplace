@@ -29,8 +29,8 @@ class Offer(models.Model):
 
 
 class OfferImages(models.Model):
-    image_url = models.ImageField(upload_to=upload_to, related_name='offer_images', blank=True, null=True)
-    offer = models.ForeignKey(Offer, on_delete=models.CASCADE)
+    image_url = models.ImageField(upload_to='offer_images/', blank=True, null=True)
+    offer = models.ForeignKey(Offer, related_name='offer_images', on_delete=models.CASCADE)
 
 
 
