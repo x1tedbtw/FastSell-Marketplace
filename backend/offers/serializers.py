@@ -16,6 +16,12 @@ class CategorySerializer(serializers.ModelSerializer):
         return serializer.data
 
 
+class ImageOfferSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OfferImages
+        fields = '__all__'
+
+
 class SubcategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Subcategory

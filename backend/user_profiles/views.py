@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from .models import UserProfile
 from .serializers import UserProfileSerializer, UserProfileRegistrationSerializer, UserProfileLoginSerializer, UserProfileTokenSerializer
 
+
 class UserProfileRegistrationAPIView(generics.CreateAPIView):
     serializer_class = UserProfileRegistrationSerializer
     authentication_classes = []
@@ -24,6 +25,7 @@ class UserProfileRegistrationAPIView(generics.CreateAPIView):
         headers = self.get_success_headers(serializer.data)
         return Response(data, status=status.HTTP_201_CREATED)
 
+
 class UserProfileLoginAPIView(generics.GenericAPIView):
     serializer_class = UserProfileLoginSerializer
     authentication_classes = []
@@ -37,6 +39,7 @@ class UserProfileLoginAPIView(generics.GenericAPIView):
             return Response(data=UserProfileTokenSerializer(token).data, status=status.HTTP_200_OK)
         else:
             return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class UserProfileTokenAPIView(generics.RetrieveDestroyAPIView):
     lookup_field = "key"
