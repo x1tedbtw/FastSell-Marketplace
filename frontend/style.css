@@ -13,7 +13,7 @@ header{
 }
 
 header .inner{
-    width: 1300px;
+    width: 90%;
     height: 100%;
     display: block;
     margin: 0 auto;
@@ -97,10 +97,64 @@ header nav .button2:hover{
     filter: brightness(1.05);
 }
 
+header .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    float: right;
+    margin-top: 30px;
+}
+
+header .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+
+@media (max-width: 768px) {
+    header .inner {
+        flex-direction: column;
+    }
+
+    header .menu-toggle {
+        display: flex;
+    }
+
+    header nav {
+        background: black;
+        display: none; /* Hide navigation by default on small screens */
+        width: 20;
+        height: 5;
+        position: absolute;
+        top: 100px; /* Adjust as needed */
+        left: auto;
+        right: 0;
+        /*background-color: #101010;*/
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+    header nav.show {
+        display: flex;
+    }
+
+    header nav li {
+        margin-right: 0;
+        margin-bottom: 10px; /* Adjust the margin as needed */
+    }
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background: linear-gradient(to right, #7fe589, #0a7e99);
 }
 
 .search_box {
@@ -114,7 +168,7 @@ body {
   margin : auto;
   width : 612px;
   height: 54px;
-  background-color : black;
+  background-color: black;
   border-radius: 25px;
   -webkit-box-shadow: 0 10px 38px 0 rgba(0,0,0,0.1);
   -moz-box-shadow: 0 10px 38px 0 rgba(0,0,0,0.1);
@@ -146,7 +200,7 @@ body {
   font-size : 16px;
   font-family: 'Roboto', sans-serif; line-height:24px;
   font-weight : normal;
-    background-color: #101010;
+    background-color: black;
     color: #FFF;
 }
 
@@ -254,6 +308,5 @@ button.category-button:hover {
 .content-container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #f0f0f0;
     padding: 20px;
 }
