@@ -16,12 +16,6 @@ class CategorySerializer(serializers.ModelSerializer):
         return serializer.data
 
 
-class ImageOfferSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = OfferImages
-        fields = '__all__'
-
-
 class SubcategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Subcategory
@@ -30,17 +24,17 @@ class SubcategorySerializer(serializers.ModelSerializer):
 class OfferImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = OfferImage
-        fields = "__all__"
+        fields = ["id", "image"]
 
 
 class OfferViewSerializer(serializers.ModelSerializer):
     owner = UserProfileSerializer(read_only=True)
     subcategory = SubcategorySerializer()
-    images = serializers.ListSerializer(child=OfferImageSerializer())
+    images = serializers.ListSerializer(child=OfferImageSerializer(), read_only=True)
 
     class Meta:
         model = Offer
-        fields = '__all__'
+        fields = ["id", "title", "owner", "subcategory", "price", "description", "images"]
 
 
 class OfferSerializer(serializers.ModelSerializer):
@@ -55,8 +49,6 @@ class OfferSerializer(serializers.ModelSerializer):
         offer = Offer.objects.create(**validated_data)
 
         for image_data in images_data:
-            image, created = OfferImage.objects.create(image=image_data)
-            offer.images.add(image)
+            OfferImage.objects.create(image=image_data, offer=offer)
         
         return offer
-
