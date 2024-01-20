@@ -265,57 +265,48 @@ main {
 }
 
 .main-categories-container {
-    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    gap: 20px;
 }
 
-.category {
-    width: 150px;
-    padding: 15px;
-    margin: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.category p {
-    margin: 0;
-    font-size: 16px;
-}
-
-button.category-button {
-    display: flex;
+.category-item {
+    display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #008080;
-    color: #fff;
-    border: 1px solid #006666;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 5px;
-    transition: background-color 0.3s;
     text-decoration: none;
+    color: inherit;
+    padding: 10px;
 }
 
-button.category-button img {
-    width: 20px;
-    margin-right: 5px;
+.category-icon {
+    border-radius: 50%;
+    width: 140px; /* Size of the circle */
+    height: 140px; /* Size of the circle */
+    background-image: url('path_to_your_image.jpg'); /* The path to your image */
+    background-size: cover;
+    background-position: center;
 }
 
-button.category-button:hover {
-    background-color: #006666;
+/* Remove the img tag from the HTML and use a div instead */
+.category-icon div {
+    width: 100%;
+    height: 100%;
+    background-image: url('path_to_your_image.jpg'); /* The path to your image */
 }
 
-.content-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.category-icon img {
+    max-width: 50%;
+    max-height: 50%;
 }
+
+.category-text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 
 footer {
     width: 100vw;
