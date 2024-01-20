@@ -18,9 +18,6 @@ class Subcategory(models.Model):
     def __str__(self):
         return self.name
 
-class OfferImage(models.Model):
-    image = models.ImageField(upload_to='offer_images/', blank=True, null=True)
-
 
 class Offer(models.Model):
     id = models.AutoField(primary_key=True)
@@ -29,7 +26,8 @@ class Offer(models.Model):
     price = models.FloatField()
     description = models.TextField()
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    images = models.ManyToManyField(OfferImage, related_name="offers")
 
-
-
+class OfferImage(models.Model):
+    id = models.AutoField(primary_key=True)
+    image = models.ImageField(upload_to='offer_images/')
+    offer = models.ForeignKey(Offer, related_name="images", on_delete=models.CASCADE)
