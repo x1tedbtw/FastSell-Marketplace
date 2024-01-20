@@ -4,6 +4,12 @@ from user_profiles.serializers import UserProfileSerializer
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = "__all__"
+
+
+class CategoryListSerializer(serializers.ModelSerializer):
     subcategories = serializers.SerializerMethodField()
 
     class Meta:
@@ -17,9 +23,11 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class SubcategorySerializer(serializers.ModelSerializer):
+    category = CategorySerializer()
+
     class Meta:
         model = Subcategory
-        fields = ["id", "name"]
+        fields = ["id", "name", "category"]
 
 class OfferImageSerializer(serializers.ModelSerializer):
     class Meta:

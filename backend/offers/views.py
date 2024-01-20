@@ -1,12 +1,12 @@
 from rest_framework import generics, permissions
 from .models import Offer, Category
-from .serializers import OfferViewSerializer, OfferSerializer, CategorySerializer    
+from .serializers import OfferViewSerializer, OfferSerializer, CategoryListSerializer    
 from .permissions import IsOwnerOrReadOnly
 
 
 class CategoryListAPIView(generics.ListAPIView):
     queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+    serializer_class = CategoryListSerializer
     permission_classes = []
 
 
