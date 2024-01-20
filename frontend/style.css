@@ -154,7 +154,7 @@ header .bar {
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background: linear-gradient(to right, #7fe589, #0a7e99);
 }
 
 .search_box {
@@ -308,6 +308,5 @@ button.category-button:hover {
 .content-container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #f0f0f0;
     padding: 20px;
 }
