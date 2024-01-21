@@ -18,7 +18,7 @@ function login() {
 
     if (!validate_data(request_data)) return;
 
-    axios.post("https://fastsell.live/api/login/", request_data)
+    axios.post("/api/login/", request_data)
     .then((response) => {
         saveToken(response.data.token);
         window.location.href = "/";

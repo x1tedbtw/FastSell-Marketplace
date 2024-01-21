@@ -19,7 +19,7 @@ function register() {
     if (!validate_data(request_data)) return;
     delete validate_data.confirm_password;
     
-    axios.post("https://fastsell.live/api/register/", request_data)
+    axios.post("/api/register/", request_data)
     .then((response) => {
         saveToken(response.data.token);
         window.location.href = "/";
