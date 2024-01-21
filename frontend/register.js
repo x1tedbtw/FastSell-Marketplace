@@ -1,4 +1,4 @@
-import { saveToken } from "./auth";
+import { saveToken } from "./auth.js";
 
 function main() {
     document.getElementById("submit-button").addEventListener("click", register);
@@ -51,4 +51,4 @@ function validate_data(data) {
     return true;
 }
 
-main()
+main();
