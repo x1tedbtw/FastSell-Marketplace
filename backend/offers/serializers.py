@@ -17,7 +17,7 @@ class OfferImageSerializer(serializers.ModelSerializer):
 
 class OfferViewSerializer(serializers.ModelSerializer):
     owner = UserProfileSerializer(read_only=True)
-    subcategory = SubcategorySerializer()
+    Category = CategorySerializer()
     images = serializers.ListSerializer(child=OfferImageSerializer(), read_only=True)
 
     class Meta:
