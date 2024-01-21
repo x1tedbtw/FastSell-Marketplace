@@ -4,29 +4,29 @@
     <meta charset="utf-8">
     <title>Login Form</title>
     <link rel="stylesheet" href="login_page.css">
+    <link rel="stylesheet" href="style.css"> <!-- Add this line to include the main styles -->
 </head>
 <body>
 <header>
-        <div class="inner">
-            <div class="logo">
+    <div class="inner">
+        <div class="logo">
+            <a href="index.html">
                 <div>
-                    <img src="img/raw_logo.png" alt="My logo">
+                    <img src="fastsell_logo.png" alt="My logo">
                 </div>
-            </div>
-
-            <nav>
-                <!-- Each of the below lines look complicated. There is a reason for this markup though!
-                <li> tag will be the container for the table.
-                <span> will be the part that centers the content inside it
-                <a> is the actual clickable part -->
-                <li><span><a href="" class="button">Home</a></span></li>
-                <li><span><a href="" class="button">Contact</a></span></li>
-                <li><span><a href="" class="button">My account</a></span></li>
-                <!-- On the line above, remove the class="button" if you don't want the final
-                element to be a button -->
-            </nav>
+            </a>
         </div>
-    </header>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav>
+            <li><span><a href="" class="button1">Add Offer</a></span></li>
+            <li><span><a href="" class="button2">Your Account</a></span></li>
+        </nav>
+    </div>
+</header>
 <div class="center">
     <h1>Login</h1>
     <form method="post">
@@ -40,7 +40,7 @@
             <span></span>
             <label>Password</label>
         </div>
-        <div class = "pass">Forgot Password?</div>
+        <div class="pass">Forgot Password?</div>
         <input type="submit" value="Login">
         <div class="signup_link">
             Not a member?<a href="#"> Signup</a>
