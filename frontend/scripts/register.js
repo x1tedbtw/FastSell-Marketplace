@@ -1,4 +1,6 @@
 import { saveToken } from "./auth.js";
+import "./components/AppHeader.js";
+
 
 function main() {
     document.getElementById("submit-button").addEventListener("click", register);
