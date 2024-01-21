@@ -16,7 +16,7 @@ function login() {
         request_data[i] = value;
     });
 
-    if (!validate_data()) return;
+    if (!validate_data(data)) return;
 
     axios.post("https://fastsell.live/api/login/", request_data)
     .then((response) => {
