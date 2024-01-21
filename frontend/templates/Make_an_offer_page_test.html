@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make an Offer</title>
+    <link rel="stylesheet" href="Make_an_offer_page.css">
+</head>
+<body>
+
+<h1>Make an Offer</h1>
+
+<form action="#" method="post" enctype="multipart/form-data">
+    <label for="category">1. Choose a Category:</label>
+    <select id="category" name="category" onchange="populateSubcategories()">
+        <option value="category1">Motor</option>
+        <option value="category2">Real Estate</option>
+        <option value="category3">Home</option>
+        <option value="category4">Fashion</option>
+        <option value="category5">Agricultural</option>
+        <option value="category6">Pets</option>
+        <option value="category7">Health and Beauty</option>
+        <option value="category8">Sport</option>
+        <option value="category9">Free</option>
+        <option value="category10">Games</option>
+    </select>
+
+    <label for="subcategory">2. Choose a Subcategory:</label>
+    <select id="subcategory" name="subcategory"></select>
+
+    <label for="productName">3. Product Name:</label>
+    <input type="text" id="productName" name="productName" required>
+
+    <label for="description">4. Description:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="photos">5. Choose Photos:</label>
+    <input type="file" id="photos" name="photos[]" accept="image/*" multiple required>
+
+    <button type="submit">Submit Offer</button>
+</form>
+<script src="Make_an_offer_page.js"></script>
+</body>
+</html>
