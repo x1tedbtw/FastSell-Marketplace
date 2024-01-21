@@ -45,7 +45,6 @@ class UserProfileTokenAPIView(generics.RetrieveDestroyAPIView):
     lookup_field = "key"
     serializer_class = UserProfileTokenSerializer
     queryset = Token.objects.all()
-    permission_classes = []
 
     def filter_queryset(self, queryset):
         return queryset.filter(user=self.request.user)
