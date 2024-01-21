@@ -4,12 +4,6 @@ from .serializers import OfferViewSerializer, OfferSerializer, CategoryListSeria
 from .permissions import IsOwnerOrReadOnly
 
 
-class CategoryListAPIView(generics.ListAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategoryListSerializer
-    permission_classes = []
-
-
 class OfferListCreateAPIView(generics.ListCreateAPIView):
     queryset = Offer.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]

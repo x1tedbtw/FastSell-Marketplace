@@ -9,26 +9,6 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class CategoryListSerializer(serializers.ModelSerializer):
-    subcategories = serializers.SerializerMethodField()
-
-    class Meta:
-        model = Category
-        fields = ["id", "name", "subcategories"]
-    
-    def get_subcategories(self, obj):
-        subcategories = Subcategory.objects.filter(category=obj)
-        serializer = SubcategorySerializer(subcategories, many=True)
-        return serializer.data
-
-
-class SubcategorySerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
-
-    class Meta:
-        model = Subcategory
-        fields = ["id", "name", "category"]
-
 class OfferImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = OfferImage
@@ -42,7 +22,7 @@ class OfferViewSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Offer
-        fields = ["id", "title", "owner", "subcategory", "price", "description", "images"]
+        fields = ["id", "title", "owner", "category", "price", "description", "images"]
 
 
 class OfferSerializer(serializers.ModelSerializer):
@@ -50,7 +30,7 @@ class OfferSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Offer
-        fields = ["title", "subcategory", "price", "description", "images"]
+        fields = ["title", "category", "price", "description", "images"]
     
     def create(self, validated_data):
         images_data = validated_data.pop("images")
