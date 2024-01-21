@@ -1,7 +1,7 @@
 import { validateToken } from "./auth.js";
 
 async function main() {
-    if (!(await validateToken()));
+    if (!(await validateToken())) return;
     const header_first_button = document.getElementById("header-button1");
     const header_second_button = document.getElementById("header-button2");
 
