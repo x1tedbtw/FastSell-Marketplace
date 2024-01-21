@@ -1,18 +1,54 @@
-async function register() {
-    try {
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        const confirm_password = document.getElementById("confirm-password").value;
+import { saveToken } from "./auth";
 
-        if (password != confirm_password) return;
-
-        const response = await axios.post("/api/register/", {
-            username: username,
-            password: password
-        });
-
-        console.log("Registered successfully: ", response.data);
-    } catch (error) {
-        console.log("Registration failed: ", error.response);
-    }
+function main() {
+    document.getElementById("submit-button").addEventListener("click", register);
 }
+
+function register() {
+    const registration_form = document.getElementById("registration-form");
+    const form_data = new FormData(registration_form);
+    
+    const request_data = {};
+
+    form_data.forEach((value, i) => {
+        request_data[i] = value;
+    });
+
+    if (!validate_data(request_data)) return;
+    delete validate_data.confirm_password;
+    
+    axios.post("https://fastsell.live/api/register/", request_data)
+    .then((response) => {
+        saveToken(response.data.token);
+        window.location.href = "/";
+    })
+    .catch((error) => {
+        alert("Server error: " + error.response);
+    });
+}
+
+function validate_data(data) {
+    if (!data.username.trim()) {
+        alert("Username field cannot be empty");
+        return false;
+    }
+
+    if (!password.trim()) {
+        alert("Password field cannot be empty");
+        return false;
+    }
+    
+    if (!confirm_password.trim()) {
+        alert("Confirm password field cannot be empty");
+        return false;
+    }
+
+    if (!password != confirm_password) {
+        alert("Passwords are not matching.");
+        return false;
+    }
+
+    return true;
+}
+
+main()

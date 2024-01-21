@@ -29,9 +29,9 @@
     </header>
 <div class="center">
     <h1>Sign up</h1>
-    <form>
+    <form id="registration-form">
         <div class="txt_field">
-            <input type="text" required id="username">
+            <input type="text" name="username" required>
             <span></span>
             <label>Username</label>
         </div>
@@ -56,20 +56,20 @@
             <label>e-mail</label>
         </div>
         <div class="txt_field">
-            <input type="password" required id="password">
+            <input type="password" name="password" required>
             <span></span>
             <label>Password</label>
         </div>
         <div class="txt_field">
-            <input type="text" required id="confirm-password">
+            <input type="password" name="Confirm-password" required>
             <span></span>
             <label>Confirm password</label>
         </div>
-        <input type="button" value="Sign up" onclick="register()">
+        <input type="button" value="Sign up" id="submit-button">
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="register.js"></script>
+    <script type="module" src="register.js"></script>
 </div>
 </body>
 </html>
