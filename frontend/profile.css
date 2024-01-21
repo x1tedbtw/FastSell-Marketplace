@@ -43,7 +43,6 @@ header .logo a {
     height: 100%;
     text-decoration: none;
     margin-top: 20px;
-    /* Add any additional styling you want for the logo button */
 }
 
 header nav{
@@ -155,9 +154,9 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background: linear-gradient(to right, #7fe589, #0a7e99);
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
-    min-height: 100vh; /* Make sure the body covers the entire viewport height */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
