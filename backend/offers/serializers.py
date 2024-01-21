@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Offer, Category, Subcategory, OfferImage
+from .models import Offer, Category, OfferImage
 from user_profiles.serializers import UserProfileSerializer
 
 
