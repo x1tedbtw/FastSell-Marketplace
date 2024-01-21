@@ -33,17 +33,17 @@ function validate_data(data) {
         return false;
     }
 
-    if (!password.trim()) {
+    if (!data.password.trim()) {
         alert("Password field cannot be empty");
         return false;
     }
     
-    if (!confirm_password.trim()) {
+    if (!data.confirm_password.trim()) {
         alert("Confirm password field cannot be empty");
         return false;
     }
 
-    if (!password != confirm_password) {
+    if (!data.password !== data.confirm_password) {
         alert("Passwords are not matching.");
         return false;
     }
