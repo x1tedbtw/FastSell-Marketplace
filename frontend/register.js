@@ -51,4 +51,4 @@ function validate_data(data) {
     return true;
 }
 
-main();
+document.addEventListener("DOMContentLoaded", main);
