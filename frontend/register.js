@@ -43,7 +43,7 @@ function validate_data(data) {
         return false;
     }
 
-    if (!data.password !== data.confirm_password) {
+    if (data.password !== data.confirm_password) {
         alert("Passwords are not matching.");
         return false;
     }
