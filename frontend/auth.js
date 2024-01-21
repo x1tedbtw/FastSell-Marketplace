@@ -15,7 +15,7 @@ export async function validateToken() {
                 "Authorization": `Token ${token}`
             }
         });
-        return response === 200;
+        return response.status === 200;
     } catch (error) {
         return false;
     }

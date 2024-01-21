@@ -1,4 +1,4 @@
-import { saveToken } from "./auth";
+import { saveToken } from "./auth.js";
 
 function main() {
     document.getElementById("submit-button").addEventListener("click", register);
@@ -43,7 +43,7 @@ function validate_data(data) {
         return false;
     }
 
-    if (!data.password !== data.confirm_password) {
+    if (data.password !== data.confirm_password) {
         alert("Passwords are not matching.");
         return false;
     }
@@ -51,4 +51,4 @@ function validate_data(data) {
     return true;
 }
 
-main()
+main();
