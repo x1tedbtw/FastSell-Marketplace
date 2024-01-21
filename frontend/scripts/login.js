@@ -16,11 +16,11 @@ function login() {
         request_data[i] = value;
     });
 
-    if (!validate_data()) return;
+    if (!validate_data(request_data)) return;
 
-    axios.post("https://fastsell.live/api/login/", request_data)
+    axios.post("/api/login/", request_data)
     .then((response) => {
-        saveToken(response.data.token);
+        saveToken(response.data.auth_token);
         window.location.href = "/";
     })
     .catch((error) => {

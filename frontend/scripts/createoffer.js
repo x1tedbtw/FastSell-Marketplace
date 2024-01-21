@@ -1,3 +1,5 @@
+import "./components/AppHeader";
+
 function populateSubcategories() {
         var categorySelect = document.getElementById("category");
         var subcategorySelect = document.getElementById("subcategory");

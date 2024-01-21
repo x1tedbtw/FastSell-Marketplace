@@ -7,7 +7,7 @@ export function saveToken(token) {
 export async function validateToken() {
     const token = getToken();
     
-    if (token == undefined || token == null) return false;
+    if (token === undefined || token === null || token === "undefined") return false;
 
     try {
         const response = await axios.get(`/api/tokens/${token}`, {
