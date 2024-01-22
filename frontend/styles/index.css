@@ -157,8 +157,46 @@ main {
 
 .category-text {
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
+}
+
+.offer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.offer {
+    max-width: 300px;
+    margin: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #333;
+}
+.offer:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.offer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.offer h2 {
+    color: #333;
+    margin-top: 10px;
+}
+
+.offer p {
+    color: #666;
+    margin-top: 5px;
 }
 
 
@@ -180,4 +218,29 @@ footer .inner {
 
 footer .inner p {
     margin: 0;
+}
+
+h2 {
+  --s: 0.1em;   /* the thickness of the line */
+  --c: #2c4bff; /* the color */
+
+  color: #0000;
+  padding-bottom: var(--s);
+  background:
+    linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.5s;
+}
+h2:hover {--_p: 100%}
+
+
+
+h2 {
+  font-family: system-ui, sans-serif;
+  cursor: pointer;
+}
+h1 {
+    margin-top: 15px;
 }

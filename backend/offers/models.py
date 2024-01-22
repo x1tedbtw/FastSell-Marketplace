@@ -13,7 +13,7 @@ class Category(models.Model):
 class Offer(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     price = models.FloatField()
     description = models.TextField()
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
