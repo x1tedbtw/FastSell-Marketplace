@@ -1,4 +1,5 @@
 import "./components/AppHeader.js";
+import { getToken } from "./auth.js";
 
 
 function main() {
