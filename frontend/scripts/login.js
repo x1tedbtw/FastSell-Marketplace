@@ -24,7 +24,7 @@ function login() {
         window.location.href = "/";
     })
     .catch((error) => {
-        alert("Server error: " + error.response);
+        alert("Server error: " + error.response.data);
     });
 }
 
