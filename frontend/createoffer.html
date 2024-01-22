@@ -13,12 +13,12 @@
 
 <h1>Make an Offer</h1>
 
-<form action="#" method="post" enctype="multipart/form-data">
+<form action="#" method="post" enctype="multipart/form-data" id="createOfferForm">
     <label for="category">1. Choose a Category:</label>
     <select id="category" name="category" onchange="populateSubcategories()">
-        <option value="category1">Motor</option>
+        <option value="category1">Cars</option>
         <option value="category2">Real Estate</option>
-        <option value="category3">Home</option>
+        <option value="category3">Furniture</option>
         <option value="category4">Fashion</option>
         <option value="category5">Agricultural</option>
         <option value="category6">Pets</option>
@@ -28,8 +28,8 @@
         <option value="category10">Games</option>
     </select>
 
-    <label for="productName">2. Product Name:</label>
-    <input type="text" id="productName" name="productName" required>
+    <label for="title">2. Title:</label>
+    <input type="text" id="title" name="title" required>
 
     <label for="description">3. Description:</label>
     <textarea id="description" name="description" rows="4" required></textarea>
@@ -37,7 +37,7 @@
     <label for="photos">4. Choose Photos:</label>
     <input type="file" id="photos" name="photos[]" accept="image/*" multiple required>
 
-    <button type="submit">Submit Offer</button>
+    <button type="submit" id="submit-button">Submit Offer</button>
 </form>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
