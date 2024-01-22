@@ -64,3 +64,6 @@ function populateSubcategories() {
 
 
     populateSubcategories();
+
+
+document.addEventListener("DOMContentLoaded", main)
