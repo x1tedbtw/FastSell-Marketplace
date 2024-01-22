@@ -4,7 +4,7 @@ import { getToken } from "./auth.js";
 function main() {
 
     sync_fields();
-
+    setupSaveButtonListener();
 }
 
 function sync_fields() {
@@ -35,5 +35,41 @@ function sync_fields() {
                  alert("Server Error :(");
              });
 }
+
+function setupSaveButtonListener() {
+    const saveChangesButton = document.getElementById("save-button");
+
+    if (saveChangesButton) {
+        saveChangesButton.addEventListener("click", function() {
+            // Function to execute when the "Save changes" button is clicked
+            saveChanges();
+        });
+    }
+}
+
+function saveChanges() {
+    const DataToSave = {
+        username: document.getElementById("username-input").value,
+        first_name: document.getElementById("firstname-input").value,
+        last_name: document.getElementById("lastname-input").value,
+        email: document.getElementById("email-input").value,
+        phone_number: document.getElementById("phone-input").value
+    };
+
+    axios.post("/api/myprofile/", DataToSave, {
+            headers: {
+                "Authorization": `Token ${getToken()}`
+            }
+        })
+    .then((response) => {
+        // Handle success
+        console.log('Response:', response.data);
+    })
+    .catch((error) => {
+        // Handle error
+        console.error('Error:', error);
+    });
+}
+
 
 document.addEventListener("DOMContentLoaded", main)
