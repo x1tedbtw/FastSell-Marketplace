@@ -12,8 +12,8 @@ function register() {
     
     const request_data = {};
 
-    form_data.forEach((value, i) => {
-        request_data[i] = value;
+    form_data.forEach((value, key) => {
+        request_data[key] = value;
     });
 
     if (!validate_data(request_data)) return;
@@ -36,6 +36,26 @@ function register() {
 function validate_data(data) {
     if (!data.username.trim()) {
         alert("Username field cannot be empty");
+        return false;
+    }
+
+    if (!data.first_name.trim()) {
+        alert("First name field cannot be empty");
+        return false;
+    }
+
+    if (!data.last_name.trim()) {
+        alert("Last name field cannot be empty");
+        return false;
+    }
+
+    if (!data.phone_number.trim()) {
+        alert("Phone field cannot be empty");
+        return false;
+    }
+
+    if (!data.email.trim()) {
+        alert("Email field cannot be empty");
         return false;
     }
 

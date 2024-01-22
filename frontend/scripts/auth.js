@@ -21,6 +21,6 @@ export async function validateToken() {
     }
 }
 
-function getToken() {
+export function getToken() {
     return document.cookie.split("; ").find((row) => row.startsWith(cookie_name))?.split("=")[1];
 }
