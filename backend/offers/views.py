@@ -18,10 +18,10 @@ class OfferListCreateAPIView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         queryset  = Offer.objects.all()
-        category = self.request.query_params.get("category")
+        category_name = self.request.query_params.get("category")
 
-        if category is not None:
-            queryset = queryset.filter(category=category)
+        if category_name is not None:
+            queryset = queryset.filter(category__name=category_name)
         return queryset
 
 
