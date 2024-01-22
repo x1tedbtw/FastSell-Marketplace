@@ -24,7 +24,11 @@ function login() {
         window.location.href = "/";
     })
     .catch((error) => {
-        alert("Server error: " + error.response);
+        for (let prop in error.response.data) {
+            if (Object.prototype.hasOwnProperty.call(error.response.data, prop)) {
+                alert(error.response.data[prop]);
+            }
+        }
     });
 }
 
