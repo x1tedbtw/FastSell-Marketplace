@@ -9,23 +9,28 @@ function saveOffer(){
     const create_offer_form = document.getElementById("createOfferForm");
     const formData = new FormData(create_offer_form);
 
-    const post_data = {};
+    const offer_data = {};
 
     formData.forEach((value, key) => {
-        post_data[key] = value;
-
+        offer_data[key] = value;
     });
 
-    axios.post("/api/offers/", post_data, {
+    axios.post("/api/offers/", offer_data, {
         headers: {
-            "Authorization":`Token ${getToken()} `
+            "Authorization":`Token ${getToken()}`
         }
     })
-        .then((response) =>{
-            console.log(response.data)
-        })
-        .catch((error) => {
-            console.error(error)
-        })
+    .then((response) =>{
+        window.location.href = "/";
+    })
+    .catch((error) => {
+        for (let prop in error.response.data) {
+            if (Object.prototype.hasOwnProperty.call(error.response.data, prop)) {
+                alert(error.response.data[prop]);
+            }
+        }
+    });
 
 }
+
+document.addEventListener("DOMContentLoaded", main);
