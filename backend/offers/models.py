@@ -18,6 +18,7 @@ class Offer(models.Model):
     description = models.TextField()
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
+
 class OfferImage(models.Model):
     id = models.AutoField(primary_key=True)
     image = models.ImageField(upload_to='offer_images/')
