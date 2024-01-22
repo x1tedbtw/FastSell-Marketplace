@@ -69,7 +69,7 @@ class UserProfileDetailAPIView(generics.RetrieveAPIView):
     permission_classes = []
 
 
-class MyUserProfileAPIView(generics.RetrieveAPIView):
+class MyUserProfileAPIView(generics.RetrieveUpdateAPIView):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
     permission_classes = [IsAuthenticated]
