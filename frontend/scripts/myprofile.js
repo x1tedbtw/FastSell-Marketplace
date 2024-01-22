@@ -56,7 +56,7 @@ function saveChanges() {
         phone_number: document.getElementById("phone-input").value
     };
 
-    axios.post("/api/myprofile/", DataToSave, {
+    axios.put("/api/myprofile/", DataToSave, {
             headers: {
                 "Authorization": `Token ${getToken()}`
             }
