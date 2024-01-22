@@ -82,5 +82,7 @@ $ gunicorn store.wsgi:application -c gunicorn_config.py
 To set up Gunicorn with systemd for automatic startup, follow [Gunicorn's deployment guide](https://docs.gunicorn.org/en/stable/deploy.html).
 
 
-7. Web Server Configuration
+7. **Web Server Configuration**
+
+   
 Configure your web server (like Nginx or Apache) to serve static content and set up a reverse proxy to Gunicorn
