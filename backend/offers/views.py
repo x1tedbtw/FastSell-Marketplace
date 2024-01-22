@@ -16,6 +16,14 @@ class OfferListCreateAPIView(generics.ListCreateAPIView):
             return OfferSerializer
         return OfferViewSerializer
 
+    def get_queryset(self):
+        queryset  = Offer.objects.all()
+        category = self.request.query_params.get("category")
+
+        if category is not None:
+            queryset = queryset.filter(category=category)
+        return queryset
+
 
 class OfferDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Offer.objects.all()
