@@ -25,8 +25,11 @@ function register() {
         window.location.href = "/";
     })
     .catch((error) => {
-        const message = error.response.data.values();
-        alert("Server error: " + message);
+        for (let prop in error.response.data) {
+            if (Object.prototype.hasOwnProperty.call(error.response.data, prop)) {
+                alert(error.response.data[prop]);
+            }
+        }
     });
 }
 
