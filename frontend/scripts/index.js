@@ -5,7 +5,7 @@ const offer_elements = [];
 function main() {
     const category_elements = [...document.getElementsByClassName("category-item")];
     category_elements.forEach((elem) => {
-        elem.addEventListener("click", () => populatePage(elem.innerHTML));
+        elem.addEventListener("click", () => populatePage(elem.children[1].innerHTML));
     });
 
     populatePage();
