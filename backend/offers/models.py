@@ -21,5 +21,5 @@ class Offer(models.Model):
 
 class OfferImage(models.Model):
     id = models.AutoField(primary_key=True)
-    image = models.ImageField(upload_to='/')
+    image = models.ImageField(upload_to='offer_images/')
     offer = models.ForeignKey(Offer, related_name="images", on_delete=models.CASCADE)
