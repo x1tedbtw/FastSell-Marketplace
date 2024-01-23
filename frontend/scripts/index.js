@@ -28,7 +28,7 @@ function createOffer(data) {
         offerDiv.classList.add("offer");
 
         const offerLink = document.createElement("a");
-        offerLink.href = `/api/offer/${data.id}`;
+        offerLink.href = `/api/offers/${data.id}`;
 
         const offerImage = document.createElement("img");
         offerImage.src = data.images[0].image;
