@@ -11,18 +11,71 @@ body{
 
 .center {
     position: absolute;
-    top: 50%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 800px;
     background: mintcream;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
 }
 .center h1{
     text-align: center;
-    padding: 0 0 20px 0;
+    padding: 0 0 0px 0;
     border-bottom: 1px solid silver;
     font-family: sans-serif;
+}
+
+#registration-form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column{
+    flex: 1;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.txt_field{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.city-select{
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border:none;
+    border-bottom: 2px solid #adadad;
+    background: none;
+    outline: none;
+    color: #333
+}
+.city-select:focus{
+    border-color: #2691d9;
+}
+.txt_field label{
+    position: absolute;
+    top: -20px;
+    left: 5px;
+    color: #adadad;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.full-width{
+    flex-basis:100%;
+    margin-bottom: 0%;
 }
 .center form{
     padding: 0 40px;

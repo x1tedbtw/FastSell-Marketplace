@@ -1,11 +1,22 @@
 import "./components/AppHeader.js";
 
 const offer_elements = [];
+let selected_category = null;
+let search_query = null;
 
 function main() {
     const category_elements = [...document.getElementsByClassName("category-item")];
     category_elements.forEach((elem) => {
-        elem.addEventListener("click", () => populatePage(elem.children[1].innerHTML));
+        elem.addEventListener("click", () => {
+            selected_category = elem.children[1].innerHTML;
+            populatePage();
+        });
+    });
+
+    const search_bar = document.getElementById("search_text");
+    search_bar.addEventListener("change", () => {
+        search_query = search_bar.value;
+        populatePage();
     });
 
     populatePage();
@@ -16,10 +27,10 @@ function clearElements() {
     offer_elements.length = 0;
 }
 
-function populatePage(category = null) {
+function populatePage() {
     clearElements();
 
-    getOffers(category)
+    getOffers()
     .then((data) => {
         data.forEach((offer_data) => {
             const offer_element = createOffer(offer_data);
@@ -58,9 +69,12 @@ function createOffer(data) {
         return offerDiv;
 }
 
-async function getOffers(category) {
-    const category_url = category ? `?category=${category}` : "";
-    return (await axios.get(`/api/offers/${category_url}`)).data;
+async function getOffers() {
+    const category_url = selected_category ? `category=${selected_category}&` : "";
+    const search_url = search_query ? `query=${search_query}&` : "";
+    const query = `?${category_url}${search_url}`
+
+    return (await axios.get(`/api/offers/${query}`)).data;
 }
 
 document.addEventListener("DOMContentLoaded", main);
