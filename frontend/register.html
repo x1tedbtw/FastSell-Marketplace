@@ -4,54 +4,80 @@
     <meta charset="utf-8">
     <title>Registration form</title>
     <link rel="stylesheet" href="styles/register.css">
-
 </head>
 <body>
 <app-header></app-header>
 
 <div class="center">
     <h1>Sign up</h1>
-    <form id="registration-form">
-        <div class="txt_field">
-            <input type="text" name="username" required>
-            <span></span>
-            <label>Username</label>
+    <form id="registration-form" class="two-columns">
+
+        <div class="column">
+            <div class="txt_field">
+                <input type="text" name="username" required>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="first_name" required>
+                <span></span>
+                <label>First Name</label>
+            </div>
+            <div class="txt_field">
+                <input type="email" name="email" required>
+                <span></span>
+                <label>e-mail</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
         </div>
-        <div class="txt_field">
-            <input type="text" name="first_name" required>
-            <span></span>
-            <label>First Name</label>
+
+        <div class="column">
+            <div class="txt_field">
+                <select id="city" name="City_where_user_lives" class="city-select" required onchange="toggleLabel()">
+                    <option value="" disabled selected></option>
+                    <option value="Wroclaw">Wroclaw</option>
+                    <option value="Warsaw">Warsaw</option>
+                    <option value="Kraków">Kraków</option>
+                    <option value="Łódź">Łódź</option>
+                </select>
+                <span></span>
+                <label id="city-label">Choose the city where you live in</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="last_name" required>
+                <span></span>
+                <label>Last Name</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="phone_number" required>
+                <span></span>
+                <label>Mobile number</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="confirm_password" required>
+                <span></span>
+                <label>Confirm password</label>
+            </div>
         </div>
-        <div class="txt_field">
-            <input type="text" name="last_name" required>
-            <span></span>
-            <label>Last Name</label>
+        <div class="column full-width">
+            <input type="button" value="Sign up" id="submit-button">
         </div>
-        <div class="txt_field">
-            <input type="text" name="phone_number" required>
-            <span></span>
-            <label>Mobile number</label>
-        </div>
-        <div class="txt_field">
-            <input type="email" name="email" required>
-            <span></span>
-            <label>e-mail</label>
-        </div>
-        <div class="txt_field">
-            <input type="password" name="password" required>
-            <span></span>
-            <label>Password</label>
-        </div>
-        <div class="txt_field">
-            <input type="password" name="confirm_password" required>
-            <span></span>
-            <label>Confirm password</label>
-        </div>
-        <input type="button" value="Sign up" id="submit-button">
+
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="scripts/register.js"></script>
+    <script>
+        function toggleLabel(){
+            var citySelect = document.getElementById('city');
+            var cityLabel = document.getElementById('city-label');
+            cityLabel.style.display = citySelect.value ? 'none' : 'block';
+        }
+    </script>
 </div>
 </body>
 </html>
