@@ -19,7 +19,7 @@ class OfferListCreateAPIView(generics.ListCreateAPIView):
         return OfferViewSerializer
 
     def get_queryset(self):
-        queryset  = Offer.objects.all()
+        queryset = Offer.objects.all()
         query = self.request.query_params.get("query")
         category_name = self.request.query_params.get("category")
         city_name = self.request.query_params.get("city")
