@@ -3,7 +3,7 @@ import "./components/AppHeader.js";
 const offer_elements = [];
 
 function main() {
-    const category_elements = document.getElementsByClassName("category-item");
+    const category_elements = [...document.getElementsByClassName("category-item")];
     category_elements.forEach((elem) => {
         elem.addEventListener("click", populatePage);
     });
