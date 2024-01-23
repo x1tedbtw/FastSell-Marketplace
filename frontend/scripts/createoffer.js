@@ -8,16 +8,11 @@ function main() {
 
 function saveOffer(){
     const create_offer_form = document.getElementById("createOfferForm");
-    const formData = new FormData(create_offer_form);
-
-    const offer_data = {};
-
-    formData.forEach((value, key) => {
-        offer_data[key] = value;
-    });
+    const offer_data = new FormData(create_offer_form);
 
     axios.post("/api/offers/", offer_data, {
         headers: {
+            "Content-Type": "multipart/form-data",
             "Authorization":`Token ${getToken()}`
         }
     })
