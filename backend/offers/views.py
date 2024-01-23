@@ -2,6 +2,8 @@ from rest_framework import generics, permissions
 from .models import Offer, Category
 from .serializers import OfferViewSerializer, OfferSerializer    
 from .permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import SAFE_METHODS
+
 
 
 class OfferListCreateAPIView(generics.ListCreateAPIView):
@@ -27,5 +29,9 @@ class OfferListCreateAPIView(generics.ListCreateAPIView):
 
 class OfferDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Offer.objects.all()
-    serializer_class = OfferSerializer
     permission_classes = [IsOwnerOrReadOnly]
+
+    def get_serializer_class(self):
+        if self.request.method in SAFE_METHODS:
+            return OfferViewSerializer
+        return OfferSerializer
