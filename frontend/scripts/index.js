@@ -5,21 +5,21 @@ const offer_elements = [];
 function main() {
     const category_elements = [...document.getElementsByClassName("category-item")];
     category_elements.forEach((elem) => {
-        elem.addEventListener("click", populatePage);
+        elem.addEventListener("click", () => populatePage(elem.innerHTML));
     });
 
     populatePage();
 }
 
 function clearElements() {
-    offer_elements.forEach(document.querySelector(".offers-container").removeChild);
+    offer_elements.forEach((elem) => elem.remove());
     offer_elements.length = 0;
 }
 
-function populatePage() {
+function populatePage(category = null) {
     clearElements();
 
-    getOffers()
+    getOffers(category)
     .then((data) => {
         data.forEach((offer_data) => {
             const offer_element = createOffer(offer_data);
@@ -58,7 +58,7 @@ function createOffer(data) {
         return offerDiv;
 }
 
-async function getOffers(category = null) {
+async function getOffers(category) {
     const category_url = category ? `?category=${category}` : "";
     return (await axios.get(`/api/offers/${category_url}`)).data;
 }
