@@ -1,16 +1,24 @@
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
-from .models import UserProfile
+from .models import UserProfile, Location
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate
 
 
+class LocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Location
+        fields = ["city"]
+
+
+""" TODO: Fix this fucking framework abomination """
 class UserProfileRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
+    location = LocationSerializer()
 
     class Meta:
         model = UserProfile
-        fields = ["id", "username", "first_name", "last_name", "phone_number", "email", "password"]
+        fields = ["id", "username", "first_name", "last_name", "phone_number", "email", "location", "password"]
     
     def validate(self, attrs):
         attrs["password"] = make_password(attrs["password"])
@@ -44,6 +52,8 @@ class UserProfileTokenSerializer(serializers.ModelSerializer):
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
+    location = LocationSerializer()
+
     class Meta:
         model = UserProfile
         fields = ["id", "username", "first_name", "last_name", "email", "location", "phone_number"]
