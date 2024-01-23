@@ -70,7 +70,7 @@ function createOffer(data) {
 }
 
 async function getOffers() {
-    const category_url = selected_category ? `category=${category}&` : "";
+    const category_url = selected_category ? `category=${selected_category}&` : "";
     const search_url = search_query ? `query=${search_query}&` : "";
     const query = `?${category_url}${search_url}`
 
