@@ -21,9 +21,12 @@ class OfferListCreateAPIView(generics.ListCreateAPIView):
     def get_queryset(self):
         queryset  = Offer.objects.all()
         category_name = self.request.query_params.get("category")
+        city_name = self.request.query_params.get("city")
 
         if category_name is not None:
             queryset = queryset.filter(category__name=category_name)
+        if city_name is not None and city_name != "Anywhere":
+            queryset = queryset.filter(owner__location__city=city_name)
         return queryset
 
 
