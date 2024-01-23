@@ -1,4 +1,4 @@
-# Project Name
+# Fast Sell marketplace
 
 Brief description of the project.
 
