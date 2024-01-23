@@ -157,4 +157,4 @@ AUTH_USER_MODEL = 'user_profiles.UserProfile'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'offer_images')
 
 # URL used to access the media
-MEDIA_URL = '/offer_images_url/'
+MEDIA_URL = '/api/media/'
