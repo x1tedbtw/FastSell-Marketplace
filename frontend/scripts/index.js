@@ -2,6 +2,15 @@ import "./components/AppHeader.js";
 
 const offer_elements = [];
 
+function main() {
+    const category_elements = document.getElementsByClassName("category-item");
+    category_elements.forEach((elem) => {
+        elem.addEventListener("click", populatePage);
+    });
+
+    populatePage();
+}
+
 function clearElements() {
     offer_elements.forEach(document.querySelector(".offers-container").removeChild);
     offer_elements.length = 0;
@@ -54,4 +63,4 @@ async function getOffers(category = null) {
     return (await axios.get(`/api/offers/${category_url}`)).data;
 }
 
-document.addEventListener("DOMContentLoaded", populatePage);
+document.addEventListener("DOMContentLoaded", main);
