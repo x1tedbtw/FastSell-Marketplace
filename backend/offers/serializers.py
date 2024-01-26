@@ -19,10 +19,11 @@ class OfferViewSerializer(serializers.ModelSerializer):
     owner = UserProfileSerializer(read_only=True)
     category = serializers.CharField(source="category.name", read_only=True)
     images = serializers.ListSerializer(child=OfferImageSerializer(), read_only=True)
+    city = serializers.CharField(source="owner.location", read_only=True)
 
     class Meta:
         model = Offer
-        fields = ["id", "title", "owner", "category", "price", "description", "images"]
+        fields = ["id", "title", "owner", "category", "price", "description", "images", "city"]
 
 
 class OfferSerializer(serializers.ModelSerializer):

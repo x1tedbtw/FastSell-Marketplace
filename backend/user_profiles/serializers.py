@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
-        fields = ["city"]
+        fields = ["id", "city"]
 
 
 """ TODO: Fix this fucking framework abomination """
