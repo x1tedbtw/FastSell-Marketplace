@@ -47,8 +47,6 @@ body {
     margin-top: 10px;
 }
 
-
-
 .offer p {
     color: #666;
     margin-top: 5px;
@@ -59,31 +57,31 @@ body {
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
-
-
 }
 
-.product-name {
+#product-name {
     color: #333;
     margin-top: 15px;
     font-size: 1.5em;
 }
-.first-name {
+
+#first-name {
     color: #333;
 }
 
-.second-name{
-    color: #333;
-}
-.email {
+#second-name {
     color: #333;
 }
 
-.address {
+#email {
     color: #333;
 }
 
-.price {
+#address {
+    color: #333;
+}
+
+#price {
     font-weight: bold;
     color: #2c4bff;
     margin-top: 15px;
@@ -104,7 +102,7 @@ body {
     background: linear-gradient(to right, #7fe589, #0a7e99);
 }
 
-.description {
+#product-description {
     color: #666;
     margin-top: 10px;
     text-align: left;
