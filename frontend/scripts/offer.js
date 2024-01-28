@@ -28,7 +28,7 @@ function displayOfferDetails(offerData) {
     const offerImage = document.querySelector(".offer-image");
     const productName = document.querySelector(".product-name");
     const price = document.querySelector(".price");
-    const description = document.querySelector(".product-description");
+    const description = document.getElementById("product-description");
 
     offerImage.src = offerData.images[0].image;
     productName.textContent = offerData.title;
