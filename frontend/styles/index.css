@@ -9,9 +9,9 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background: linear-gradient(to right, #7fe589, #0a7e99);
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
-    min-height: 100vh; /* Make sure the body covers the entire viewport height */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -36,12 +36,44 @@ body {
   box-shadow: 0 10px 38px 0 rgba(0,0,0,0.1);
 }
 
+.select_area select {
+  color: #1ab26b;
+  background-color: transparent;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 15px;
+}
+
+
+.select_area:after {
+  content: '\25BC';
+  color: #1ab26b;
+  position: absolute;
+  right: 20px;
+  pointer-events: none;
+  font-size: 12px;
+}
+
+
 .select_area {
-  color : #1ab26b;
-  display : flex;
-  align-items: center;
-  font-family: 'Roboto', sans-serif; line-height:24px;
-  font-weight : normal ;
+  position: relative;
+  padding-right: 30px;
+}
+
+.select_area select:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.map_icon {
+    color: #1ab26b;
+    margin-right: 10px;
 }
 
 .text {
@@ -237,10 +269,9 @@ h2 {
           background-clip: text,padding-box;
   transition: 0.5s;
 }
+h2:hover {--_p: 100%}
 
-.category-item:hover h2 {--_p: 100%}
 
-.offer:hover h2 {--_p: 100%}
 
 h2 {
   font-family: system-ui, sans-serif;
