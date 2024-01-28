@@ -28,7 +28,7 @@ function displayOfferDetails(offerData) {
     const offerImage = document.getElementById("offer-image");
     const productName = document.getElementById("product-name");
     const fistName = document.getElementById("first-name");
-    const secondName = document.getElementById("second-name");
+    const lastName = document.getElementById("last-name");
     const email = document.getElementById("email");
     const phone_number = document.getElementById("phone_number");
     const address = document.getElementById("address");
@@ -38,7 +38,7 @@ function displayOfferDetails(offerData) {
     offerImage.src = offerData.images[0].image;
     productName.textContent = offerData.title;
     fistName.textContent = offerData.owner.first_name;
-    secondName.textContent = offerData.owner.second_name;
+    lastName.textContent = offerData.owner.last_name;
     email.textContent = offerData.owner.email;
     phone_number.textContent = offerData.owner.phone_number;
     address.textContent = offerData.owner.location.city;
