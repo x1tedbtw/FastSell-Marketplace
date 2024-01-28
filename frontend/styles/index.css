@@ -237,7 +237,8 @@ h2 {
           background-clip: text,padding-box;
   transition: 0.5s;
 }
-h2:hover {--_p: 100%}
+
+.category-item:hover h2 {--_p: 100%}
 
 
 
