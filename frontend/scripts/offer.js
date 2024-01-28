@@ -25,14 +25,14 @@ function getOfferDetails(offerId) {
 }
 
 function displayOfferDetails(offerData) {
-    const offerImage = document.querySelector(".offer-image");
-    const productName = document.querySelector(".product-name");
-    const fistName = document.querySelector(".first-name");
-    const secondName = document.querySelector(".second-name");
-    const email = document.querySelector(".email");
-    const phone_number = document.querySelector(".phone_nubmer");
-    const address = document.querySelector(".address");
-    const price = document.querySelector(".price");;
+    const offerImage = document.getElementById("offer-image");
+    const productName = document.getElementById("product-name");
+    const fistName = document.getElementById("first-name");
+    const secondName = document.getElementById("second-name");
+    const email = document.getElementById("email");
+    const phone_number = document.getElementById("phone_nubmer");
+    const address = document.getElementById("address");
+    const price = document.getElementById("price");;
     const description = document.getElementById("product-description");
 
     offerImage.src = offerData.images[0].image;
