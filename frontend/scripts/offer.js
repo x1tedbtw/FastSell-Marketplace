@@ -30,7 +30,7 @@ function displayOfferDetails(offerData) {
     const fistName = document.getElementById("first-name");
     const secondName = document.getElementById("second-name");
     const email = document.getElementById("email");
-    const phone_number = document.getElementById("phone_nubmer");
+    const phone_number = document.getElementById("phone_number");
     const address = document.getElementById("address");
     const price = document.getElementById("price");;
     const description = document.getElementById("product-description");
