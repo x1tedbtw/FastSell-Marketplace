@@ -3,6 +3,7 @@ import "./components/AppHeader.js";
 const offer_elements = [];
 let selected_category = null;
 let search_query = null;
+let city = null;
 
 function main() {
     const category_elements = [...document.getElementsByClassName("category-item")];
@@ -16,6 +17,12 @@ function main() {
     const search_bar = document.getElementById("search_text");
     search_bar.addEventListener("change", () => {
         search_query = search_bar.value;
+        populatePage();
+    });
+
+    const location_select = document.getElementById("city_select");
+    location_select.addEventListener("change", () => {
+        city = location_select.value;
         populatePage();
     });
 
@@ -72,7 +79,8 @@ function createOffer(data) {
 async function getOffers() {
     const category_url = selected_category ? `category=${selected_category}&` : "";
     const search_url = search_query ? `query=${search_query}&` : "";
-    const query = `?${category_url}${search_url}`
+    const city_url = city ? `city=${city}&` : "";
+    const query = `?${category_url}${search_url}${city_url}`;
 
     return (await axios.get(`/api/offers/${query}`)).data;
 }
