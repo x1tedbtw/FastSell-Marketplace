@@ -13,10 +13,24 @@
     <main>
         <div class="search_box"></div>
             <div class="search">
-                <div class= "select_area">
+                <div class="select_area">
                     <i class="fas fa-map-marker-alt map_icon"></i>
-                    <div class="text">Anywhere</div>
+                    <select id="city_select" class="city_select">
+                        <option value="anywhere">Anywhere</option>
+                        <option value="anywhere">Minsk</option>
+                        <option value="anywhere">Chernigov</option>
+                        <option value="anywhere">Kiev</option>
+                        <option value="anywhere">Cherson</option>
+                        <option value="anywhere">Lviv</option>
+                        <option value="warsaw">Warsaw</option>
+                        <option value="krakow">Krakow</option>
+                        <option value="lodz">Lodz</option>
+                        <option value="wroclaw">Wroclaw</option>
+                        <option value="poznan">Poznan</option>
+                        <option value="gdansk">Gdansk</option>
+                    </select>
                 </div>
+
                 <div class="line"></div>
                 <div class = "text_and-icon">
                 <input type="text" class="search_text" id="search_text" placeholder="Search...">
