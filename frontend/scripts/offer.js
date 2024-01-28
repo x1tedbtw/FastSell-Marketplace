@@ -40,8 +40,8 @@ function displayOfferDetails(offerData) {
     fistName.textContent = offerData.owner.first_name;
     secondName.textContent = offerData.owner.second_name;
     email.textContent = offerData.owner.email;
-    phone_number.textContent = offerData.owner.email;
-    address.textContent = offerData.owner.location;
+    phone_number.textContent = offerData.owner.phone_number;
+    address.textContent = offerData.owner.location.city;
     price.textContent = `Price: ${offerData.price} zł`;
     description.textContent = offerData.description;
 }
