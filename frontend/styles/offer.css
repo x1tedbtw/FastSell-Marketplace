@@ -47,6 +47,8 @@ body {
     margin-top: 10px;
 }
 
+
+
 .offer p {
     color: #666;
     margin-top: 5px;
@@ -65,6 +67,20 @@ body {
     color: #333;
     margin-top: 15px;
     font-size: 1.5em;
+}
+.first-name {
+    color: #333;
+}
+
+.second-name{
+    color: #333;
+}
+.email {
+    color: #333;
+}
+
+.address {
+    color: #333;
 }
 
 .price {
