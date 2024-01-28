@@ -240,7 +240,7 @@ h2 {
 
 .category-item:hover h2 {--_p: 100%}
 
-
+.offer:hover h2 {--_p: 100%}
 
 h2 {
   font-family: system-ui, sans-serif;
