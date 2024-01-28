@@ -8,5 +8,5 @@ class Location(models.Model):
 
 
 class UserProfile(AbstractUser):
-    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15, null=True, blank=True)

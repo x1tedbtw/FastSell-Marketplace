@@ -17,7 +17,7 @@ function register() {
     });
 
     if (!validate_data(request_data)) return;
-    delete validate_data.confirm_password;
+    delete request_data.confirm_password;
     
     axios.post("/api/register/", request_data)
     .then((response) => {
@@ -36,6 +36,11 @@ function register() {
 function validate_data(data) {
     if (!data.username.trim()) {
         alert("Username field cannot be empty");
+        return false;
+    }
+
+    if (!data.location.trim()) {
+        alert("Location field cannot be empty");
         return false;
     }
 

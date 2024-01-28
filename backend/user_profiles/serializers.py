@@ -14,7 +14,7 @@ class LocationSerializer(serializers.ModelSerializer):
 """ TODO: Fix this fucking framework abomination """
 class UserProfileRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
-    location = LocationSerializer()
+    location = serializers.CharField(write_only=True)
 
     class Meta:
         model = UserProfile
@@ -23,6 +23,15 @@ class UserProfileRegistrationSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         attrs["password"] = make_password(attrs["password"])
         return attrs
+
+    def create(self, validated_data):
+        location_data = validated_data.pop("location")
+        try:
+            location = Location.objects.get(city=location_data)
+        except Location.DoesNotExist:
+            raise serializers.ValidationError({"category": "Invalid category name"})
+        validated_data["location"] = location
+        return UserProfile.objects.create(**validated_data)
 
 
 class UserProfileLoginSerializer(serializers.Serializer):
